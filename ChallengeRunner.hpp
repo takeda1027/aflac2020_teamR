@@ -15,10 +15,11 @@ class ChallengeRunner : public LineTracer {
 private:
     int8_t pwmMode;
     int16_t count, procCount, traceCnt;
+    Motor* armMotor;
 protected:
 public:
     ChallengeRunner();
-    ChallengeRunner(Motor* lm, Motor* rm, Motor* tm);
+    ChallengeRunner(Motor* lm, Motor* rm, Motor* tm,Motor* am);
     void haveControl();
     void operate(); // method to invoke from the cyclic handler
     void runChallenge();

@@ -152,7 +152,7 @@ extern rgb_raw_t g_rgb;
 extern hsv_raw_t g_hsv;
 extern int16_t g_grayScale, g_grayScaleBlueless;
 extern int16_t g_angle, g_anglerVelocity;
-extern int8_t challenge_stepNo;
+extern int16_t g_challenge_stepNo; //sano
 
 extern Clock*       clock;
 extern uint8_t      state;

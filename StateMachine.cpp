@@ -36,7 +36,7 @@ void StateMachine::initialize() {
     blindRunner = new BlindRunner(leftMotor, rightMotor, tailMotor);
     lineTracer = new LineTracer(leftMotor, rightMotor, tailMotor);
     lineTracer->activate();
-    challengeRunner = new ChallengeRunner(leftMotor, rightMotor, tailMotor);
+    challengeRunner = new ChallengeRunner(leftMotor, rightMotor, tailMotor,armMotor);
     challengeRunner->activate();
     
     ev3_led_set_color(LED_ORANGE); /* 初期化完了通知 */
@@ -128,15 +128,15 @@ void StateMachine::sendTrigger(uint8_t event) {
             switch (event) {
                 case EVT_slalom_reached:
                     challengeRunner->rest();
-                    armMotor->setPWM(-50);
+                    //armMotor->setPWM(-50);
                     challengeRunner->runChallenge();
-                    armMotor->setPWM(80);
-                    ++challenge_stepNo;
+                    //armMotor->setPWM(80);
+                    //++challenge_stepNo;
                     break;
                 case EVT_slalom_on:
                     challengeRunner->rest();
                     challengeRunner->runChallenge();
-                    ++challenge_stepNo;
+                    //++challenge_stepNo;
                     break;
                 default:
                     break;
